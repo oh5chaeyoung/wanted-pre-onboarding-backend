@@ -1,4 +1,4 @@
-package com.wanted.prenoboarding.company.domain.entity;
+package com.wanted.prenoboarding.notice.domain.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
