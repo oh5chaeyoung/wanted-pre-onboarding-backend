@@ -1,5 +1,6 @@
 package com.wanted.prenoboarding.notice.domain.entity;
 
+import com.wanted.prenoboarding.company.domain.entity.Company;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
@@ -22,6 +23,9 @@ public class Notice {
 	private String skill;
 
 	/* 회사 정보 */
+	@ManyToOne
+	@JoinColumn(name = "company_id")
+	private Company company;
 
 	/* 채용공고 수정 메소드 */
 }
