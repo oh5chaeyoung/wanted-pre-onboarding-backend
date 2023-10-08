@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class CompanyController {
 	private final CompanyService companyService;
-	@GetMapping
-	public ResponseEntity<CompanyResponse> companyDetails(Long id) {
+	@GetMapping("/{companyId}")
+	public ResponseEntity<CompanyResponse> companyDetails(@PathVariable("companyId") Long id) {
 		return ResponseEntity.status(HttpStatus.OK).body(companyService.findCompanyById(id));
 	}
 	@PostMapping
