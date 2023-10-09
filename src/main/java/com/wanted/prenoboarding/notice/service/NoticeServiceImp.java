@@ -48,12 +48,30 @@ public class NoticeServiceImp implements NoticeService {
 
 	@Override
 	public NoticeResponse findNoticeById(Long id) {
-		return null;
+		Notice notice = noticeRepository.findNoticeById(id);
+		NoticeResponse dto = entityToDto(notice);
+		/* 회사 정보 */
+		log.debug("{}", notice.getCompany());
+		Company company = companyRepository.findCompanyById(notice.getCompany().getId());
+		dto.setCompanyResponse(CompanyResponse.builder()
+				.id(company.getId())
+				.name(company.getName())
+				.country(company.getCountry())
+				.region(company.getRegion())
+				.build());
+		return dto;
 	}
 
 	@Override
 	public Long addNotice(NoticeRegisterRequest request) {
-		return null;
+		Notice notice = Notice.builder()
+				.position(request.getPosition())
+				.commission(request.getCommission())
+				.content(request.getContent())
+				.skill(request.getSkill())
+				.company(companyRepository.findCompanyById(request.getCompanyId()))
+				.build();
+		return noticeRepository.save(notice).getId();
 	}
 
 	@Override
