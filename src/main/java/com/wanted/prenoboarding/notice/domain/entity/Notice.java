@@ -3,12 +3,14 @@ package com.wanted.prenoboarding.notice.domain.entity;
 import com.wanted.prenoboarding.company.domain.entity.Company;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "notices")
+@Getter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
