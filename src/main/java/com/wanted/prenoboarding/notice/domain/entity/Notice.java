@@ -1,7 +1,7 @@
 package com.wanted.prenoboarding.notice.domain.entity;
 
 import com.wanted.prenoboarding.company.domain.entity.Company;
-import com.wanted.prenoboarding.notice.dto.NoticeModifyRequest;
+import com.wanted.prenoboarding.notice.dto.request.NoticeModifyRequest;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
