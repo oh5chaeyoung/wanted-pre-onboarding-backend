@@ -33,4 +33,8 @@ public class NoticeController {
 	                                                   @RequestBody NoticeModifyRequest request) {
 		return ResponseEntity.status(HttpStatus.OK).body(noticeService.modifyNotice(id, request));
 	}
+	@DeleteMapping("/{noticeId}")
+	public ResponseEntity<Long> noticeRemove(@PathVariable("noticeId") Long id) {
+		return ResponseEntity.status(HttpStatus.OK).body(noticeService.removeNotice(id));
+	}
 }

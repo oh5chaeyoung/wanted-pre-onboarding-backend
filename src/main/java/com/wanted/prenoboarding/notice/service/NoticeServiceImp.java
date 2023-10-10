@@ -88,7 +88,8 @@ public class NoticeServiceImp implements NoticeService {
 
 	@Override
 	public Long removeNotice(Long id) {
-		return null;
+		noticeRepository.deleteById(id);
+		return id;
 	}
 
 	public NoticeResponse noticeEntityToDto(Notice notice) {
