@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PrenoboardingApplication {
+public class PreonboardingApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PrenoboardingApplication.class, args);
+		SpringApplication.run(PreonboardingApplication.class, args);
 	}
 
 }
