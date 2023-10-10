@@ -1,5 +1,6 @@
 package com.wanted.prenoboarding.notice.controller;
 
+import com.wanted.prenoboarding.notice.dto.NoticeModifyRequest;
 import com.wanted.prenoboarding.notice.dto.NoticeRegisterRequest;
 import com.wanted.prenoboarding.notice.dto.NoticeResponse;
 import com.wanted.prenoboarding.notice.service.NoticeService;
@@ -26,5 +27,10 @@ public class NoticeController {
 	@PostMapping
 	public ResponseEntity<Long> noticeAdd(@RequestBody NoticeRegisterRequest request) {
 		return ResponseEntity.status(HttpStatus.OK).body(noticeService.addNotice(request));
+	}
+	@PutMapping("/{noticeId}")
+	public ResponseEntity<NoticeResponse> noticeModify(@PathVariable("noticeId") Long id,
+	                                                   @RequestBody NoticeModifyRequest request) {
+		return ResponseEntity.status(HttpStatus.OK).body(noticeService.modifyNotice(id, request));
 	}
 }

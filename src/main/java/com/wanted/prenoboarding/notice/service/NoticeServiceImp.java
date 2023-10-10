@@ -2,8 +2,6 @@ package com.wanted.prenoboarding.notice.service;
 
 import com.wanted.prenoboarding.company.domain.entity.Company;
 import com.wanted.prenoboarding.company.domain.repository.CompanyRepository;
-import com.wanted.prenoboarding.company.dto.CompanyResponse;
-import com.wanted.prenoboarding.company.service.CompanyService;
 import com.wanted.prenoboarding.company.service.CompanyServiceImp;
 import com.wanted.prenoboarding.notice.domain.entity.Notice;
 import com.wanted.prenoboarding.notice.domain.repository.NoticeRepository;
@@ -63,7 +61,6 @@ public class NoticeServiceImp implements NoticeService {
 		Notice notice = noticeRepository.findNoticeById(id);
 		NoticeResponse dto = noticeEntityToDto(notice);
 		/* 회사 정보 */
-		log.debug("{}", notice.getCompany());
 		Company company = companyRepository.findCompanyById(notice.getCompany().getId());
 		dto.setCompanyResponse(companyService.companyEntityToDto(company));
 		return dto;
@@ -83,7 +80,10 @@ public class NoticeServiceImp implements NoticeService {
 
 	@Override
 	public NoticeResponse modifyNotice(Long id, NoticeModifyRequest request) {
-		return null;
+		Notice notice = noticeRepository.findNoticeById(id);
+		notice.editNotice(request);
+		noticeRepository.save(notice);
+		return findNoticeById(id);
 	}
 
 	@Override
