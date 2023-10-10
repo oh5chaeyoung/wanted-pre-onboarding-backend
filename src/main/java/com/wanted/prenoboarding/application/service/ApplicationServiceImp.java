@@ -3,6 +3,7 @@ package com.wanted.prenoboarding.application.service;
 import com.wanted.prenoboarding.application.domain.entity.Application;
 import com.wanted.prenoboarding.application.domain.repository.ApplicationRepository;
 import com.wanted.prenoboarding.application.dto.ApplicationRegisterRequest;
+import com.wanted.prenoboarding.exception.ApplicationAlreadyExistException;
 import com.wanted.prenoboarding.member.domain.repository.MemberRepository;
 import com.wanted.prenoboarding.notice.domain.repository.NoticeRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +19,11 @@ public class ApplicationServiceImp implements ApplicationService{
 	private final NoticeRepository noticeRepository;
 	@Override
 	public Long addApplication(ApplicationRegisterRequest request) {
-		Application application = applicationEntityToDto(request);
+		Application application = applicationRepository.findApplicationByMemberIdAndNoticeId(request.getMemberId(), request.getNoticeId());
+		if(application != null) {
+			throw new ApplicationAlreadyExistException("이미 지원하였습니다.");
+		}
+		application = applicationEntityToDto(request);
 		return applicationRepository.save(application).getId();
 	}
 
