@@ -1,8 +1,9 @@
 package com.wanted.prenoboarding.notice.controller;
 
-import com.wanted.prenoboarding.notice.dto.NoticeModifyRequest;
-import com.wanted.prenoboarding.notice.dto.NoticeRegisterRequest;
-import com.wanted.prenoboarding.notice.dto.NoticeResponse;
+import com.wanted.prenoboarding.notice.dto.response.NoticeDetailResponse;
+import com.wanted.prenoboarding.notice.dto.request.NoticeModifyRequest;
+import com.wanted.prenoboarding.notice.dto.request.NoticeRegisterRequest;
+import com.wanted.prenoboarding.notice.dto.response.NoticeResponse;
 import com.wanted.prenoboarding.notice.service.NoticeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -21,7 +22,7 @@ public class NoticeController {
 		return ResponseEntity.status(HttpStatus.OK).body(noticeService.findAllNotices());
 	}
 	@GetMapping("/{noticeId}")
-	public ResponseEntity<NoticeResponse> noticeDetails(@PathVariable("noticeId") Long id) {
+	public ResponseEntity<NoticeDetailResponse> noticeDetails(@PathVariable("noticeId") Long id) {
 		return ResponseEntity.status(HttpStatus.OK).body(noticeService.findNoticeById(id));
 	}
 	@PostMapping
