@@ -8,11 +8,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/notices")
 @RequiredArgsConstructor
 public class NoticeController {
 	private final NoticeService noticeService;
+	@GetMapping
+	public ResponseEntity<List<NoticeResponse>> noticeList() {
+		return ResponseEntity.status(HttpStatus.OK).body(noticeService.findAllNotices());
+	}
 	@GetMapping("/{noticeId}")
 	public ResponseEntity<NoticeResponse> noticeDetails(@PathVariable("noticeId") Long id) {
 		return ResponseEntity.status(HttpStatus.OK).body(noticeService.findNoticeById(id));

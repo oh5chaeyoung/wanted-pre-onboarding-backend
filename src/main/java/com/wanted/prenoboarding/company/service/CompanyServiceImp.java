@@ -26,6 +26,10 @@ public class CompanyServiceImp implements CompanyService{
 		Company company = companyRepository.findById(id)
 				.orElseThrow(() -> new CompanyNotFoundException("회사 정보가 없습니다."));
 
+		return companyEntityToDto(company);
+	}
+
+	public CompanyResponse companyEntityToDto(Company company) {
 		return CompanyResponse.builder()
 				.id(company.getId())
 				.name(company.getName())
