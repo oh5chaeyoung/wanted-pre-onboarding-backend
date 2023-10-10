@@ -72,13 +72,12 @@ public class NoticeServiceImp implements NoticeService {
 
 		/* 같은 회사에서 올린 공고 List */
 		List<Notice> entities = noticeRepository.findNoticesByCompanyId(company.getId());
-		List<NoticeResponse> dtos = new ArrayList<>();
+		List<Long> ids = new ArrayList<>();
 		for(Notice entity: entities) {
-			NoticeResponse response = noticeEntityToDto(entity);
-			dtos.add(response);
+			ids.add(entity.getId());
 		}
 
-		detailDto.setCompanyNotices(dtos);
+		detailDto.setCompanyNoticeIds(ids);
 		return detailDto;
 	}
 

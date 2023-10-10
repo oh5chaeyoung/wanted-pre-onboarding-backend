@@ -9,5 +9,5 @@ import java.util.List;
 @Builder
 public class NoticeDetailResponse {
 	private NoticeResponse noticeResponse;
-	private List<NoticeResponse> companyNotices;
+	private List<Long> companyNoticeIds;
 }
