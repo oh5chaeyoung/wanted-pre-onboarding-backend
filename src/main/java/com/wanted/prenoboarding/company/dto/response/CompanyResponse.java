@@ -1,4 +1,4 @@
-package com.wanted.prenoboarding.company.dto;
+package com.wanted.prenoboarding.company.dto.response;
 
 import lombok.Builder;
 import lombok.Data;

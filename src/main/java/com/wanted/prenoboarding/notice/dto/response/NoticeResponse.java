@@ -1,6 +1,6 @@
 package com.wanted.prenoboarding.notice.dto.response;
 
-import com.wanted.prenoboarding.company.dto.CompanyResponse;
+import com.wanted.prenoboarding.company.dto.response.CompanyResponse;
 import lombok.Builder;
 import lombok.Data;
 
