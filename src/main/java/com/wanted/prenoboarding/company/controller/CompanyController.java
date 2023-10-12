@@ -1,7 +1,7 @@
 package com.wanted.prenoboarding.company.controller;
 
-import com.wanted.prenoboarding.company.dto.CompanyRegisterRequest;
-import com.wanted.prenoboarding.company.dto.CompanyResponse;
+import com.wanted.prenoboarding.company.dto.request.CompanyRegisterRequest;
+import com.wanted.prenoboarding.company.dto.response.CompanyResponse;
 import com.wanted.prenoboarding.company.service.CompanyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

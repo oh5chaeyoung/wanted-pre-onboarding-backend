@@ -2,8 +2,8 @@ package com.wanted.prenoboarding.company.service;
 
 import com.wanted.prenoboarding.company.domain.entity.Company;
 import com.wanted.prenoboarding.company.domain.repository.CompanyRepository;
-import com.wanted.prenoboarding.company.dto.CompanyRegisterRequest;
-import com.wanted.prenoboarding.company.dto.CompanyResponse;
+import com.wanted.prenoboarding.company.dto.request.CompanyRegisterRequest;
+import com.wanted.prenoboarding.company.dto.response.CompanyResponse;
 import com.wanted.prenoboarding.exception.CompanyNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
