@@ -10,7 +10,6 @@ public class NoticeResponse {
 	private Long id;
 	private String position;
 	private String commission;
-	private String content;
 	private String skill;
 	private CompanyResponse companyResponse;
 }

@@ -9,5 +9,6 @@ import java.util.List;
 @Builder
 public class NoticeDetailResponse {
 	private NoticeResponse noticeResponse;
+	private String content;
 	private List<Long> companyNoticeIds;
 }

@@ -30,7 +30,7 @@ public class NoticeController {
 		return ResponseEntity.status(HttpStatus.OK).body(noticeService.addNotice(request));
 	}
 	@PutMapping("/{noticeId}")
-	public ResponseEntity<NoticeResponse> noticeModify(@PathVariable("noticeId") Long id,
+	public ResponseEntity<NoticeDetailResponse> noticeModify(@PathVariable("noticeId") Long id,
 	                                                   @RequestBody NoticeModifyRequest request) {
 		return ResponseEntity.status(HttpStatus.OK).body(noticeService.modifyNotice(id, request));
 	}

@@ -12,6 +12,6 @@ public interface NoticeService {
 	List<NoticeResponse> findNoticesByCompanyId(Long companyId);
 	NoticeDetailResponse findNoticeById(Long id);
 	Long addNotice(NoticeRegisterRequest request);
-	NoticeResponse modifyNotice(Long id, NoticeModifyRequest request);
+	NoticeDetailResponse modifyNotice(Long id, NoticeModifyRequest request);
 	Long removeNotice(Long id);
 }
