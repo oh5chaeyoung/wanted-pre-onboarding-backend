@@ -57,38 +57,29 @@
 
 [POST] localhost:8080/notices
 
-    {
-    
-        "회사_id": 회사_id,
-        "position": "백엔드 주니어 개발자",
-        "commission": 1000000,
-        "content": "원티드랩에서 백엔드 주니어 개발자를 채용합니다. 자격요건은..",
-        "skill": "Python"
+<img width="1250" alt="스크린샷 2023-10-12 오후 12 27 01" src="https://github.com/oh5chaeyoung/wanted-pre-onboarding-backend/assets/110815151/a662dbd1-84a6-4c1b-961d-c166f0cb816d">
 
-    }
 #### 2. 채용공고를 수정합니다.
 
 
 [PUT] localhost:8080/notices/{noticeId}
 
-    {
-    
-        "position": "백엔드 주니어 개발자",
-        "commission": 1500000,    # 변경됨
-        "content": "원티드랩에서 백엔드 주니어 개발자를 채용합니다. 자격요건은..",
-        "skill": "Java"        # 변경됨
+<img width="1250" alt="스크린샷 2023-10-12 오후 12 22 15" src="https://github.com/oh5chaeyoung/wanted-pre-onboarding-backend/assets/110815151/9452a85e-069a-4f99-8c2f-117d0f7b98e0">
 
-    }
 #### 3. 채용공고를 삭제합니다.
 
 
 [DELETE] localhost:8080/notices/{noticeId}
+
+<img width="1250" alt="스크린샷 2023-10-12 오후 12 27 26" src="https://github.com/oh5chaeyoung/wanted-pre-onboarding-backend/assets/110815151/2f22adef-d6f4-4fc4-8713-7da34f56f335">
 
 
 #### 4. 채용공고 목록을 가져옵니다.
 
 
 [GET] localhost:8080/notices
+
+<img width="1250" alt="스크린샷 2023-10-12 오후 12 16 46" src="https://github.com/oh5chaeyoung/wanted-pre-onboarding-backend/assets/110815151/a4577361-e19e-443a-9e9b-1adebac67c47">
 
 
 #### 5. 채용 상세 페이지를 가져옵니다.
@@ -97,6 +88,8 @@
 - 채용 내용
 - 회사가 올린 다른 채용공고
 
+<img width="1250" alt="스크린샷 2023-10-12 오후 12 16 56" src="https://github.com/oh5chaeyoung/wanted-pre-onboarding-backend/assets/110815151/841ee1fa-b5e1-45c1-b461-add473b47bb5">
+
 
 ### [사용자] 채용공고 지원
 #### 6. 사용자는 채용공고에 지원합니다
@@ -104,3 +97,8 @@
 [POST] localhost:8080/applications
 - 한 회사에 1번만 지원 가능
 - 중복지원(회사id와 사용자id가 둘 다 일치하는 내용이 데이터베이스에 있는 경우)은 불가
+
+<img width="1250" alt="스크린샷 2023-10-12 오후 12 24 17" src="https://github.com/oh5chaeyoung/wanted-pre-onboarding-backend/assets/110815151/974f34bb-70ac-4c21-b3d0-397d5e1ab867">
+
+**[중복지원]**
+<img width="1250" alt="스크린샷 2023-10-12 오후 12 24 29" src="https://github.com/oh5chaeyoung/wanted-pre-onboarding-backend/assets/110815151/e0a4279c-16b1-4e8e-b0b8-ea3e5f0da7e1">
