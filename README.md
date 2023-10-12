@@ -23,6 +23,33 @@
 - members: 지원자
 - applications: 지원자의 지원 내역
 
+## 프로젝트 구조
+#### 1. application / company / member / notice
+
+    |- controller
+    
+    |- domain
+    
+        |- entity
+        
+        |- repository
+        
+    |- dto
+    
+        |- request
+        
+        |- response
+        
+    |- service
+
+#### 2. exception
+- ApplicationAlreadyExistException
+  
+  사용자가 같은 채용공고에 1회만 지원하기 위해 사용한다. 지원 전에 이미 동일한 지원 내역이 있으면 예외 처리를 한다.
+- CompanyNotFoundException
+  
+  findCompanyById(회사id로 회사 정보를 얻는 메소드)에서 사용한다.
+
 ## 주요 기능
 ### [회사] 채용공고 CRUD
 #### 1. 채용공고를 등록합니다.
