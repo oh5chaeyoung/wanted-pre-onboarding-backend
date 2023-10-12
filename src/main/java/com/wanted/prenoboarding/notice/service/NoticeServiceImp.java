@@ -61,7 +61,7 @@ public class NoticeServiceImp implements NoticeService {
 	public NoticeDetailResponse findNoticeById(Long id) {
 		Notice notice = noticeRepository.findNoticeById(id);
 		NoticeResponse dto = noticeEntityToDto(notice);
-		
+
 		/* 회사 정보 */
 		Company company = companyRepository.findCompanyById(notice.getCompany().getId());
 		dto.setCompanyResponse(companyService.companyEntityToDto(company));
@@ -77,6 +77,7 @@ public class NoticeServiceImp implements NoticeService {
 			ids.add(entity.getId());
 		}
 
+		detailDto.setContent(notice.getContent());
 		detailDto.setCompanyNoticeIds(ids);
 		return detailDto;
 	}
@@ -94,11 +95,11 @@ public class NoticeServiceImp implements NoticeService {
 	}
 
 	@Override
-	public NoticeResponse modifyNotice(Long id, NoticeModifyRequest request) {
+	public NoticeDetailResponse modifyNotice(Long id, NoticeModifyRequest request) {
 		Notice notice = noticeRepository.findNoticeById(id);
 		notice.editNotice(request);
-
-		return noticeEntityToDto(noticeRepository.save(notice));
+		noticeRepository.save(notice);
+		return findNoticeById(id);
 	}
 
 	@Override
@@ -112,7 +113,6 @@ public class NoticeServiceImp implements NoticeService {
 				.id(notice.getId())
 				.position(notice.getPosition())
 				.commission(notice.getCommission())
-				.content(notice.getContent())
 				.skill(notice.getSkill())
 				.build();
 	}
